@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Atik Shahriar | Software Engineer</title>
+
+    <!-- FAVICON LINK: Replace the href below with your own image path (e.g., "assets/logo.png") -->
+    <link rel="icon" type="image/png" href="https://placehold.co/40.png?text=MA&font=roboto">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6', // Blue-500
+                        secondary: '#8b5cf6', // Violet-500
+                        dark: '#0f172a', // Slate-900
+                        light: '#f8fafc', // Slate-50
+                        upwork: '#14a800', // Upwork Green
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: #334155;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-light text-slate-800 dark:bg-dark dark:text-slate-200 font-sans transition-colors duration-300 selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 bg-white/80 dark:bg-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#"
+                class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+                Md Atik Shahriar
+            </a>
+
+            <div class="flex items-center gap-6">
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex space-x-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+                    <a href="#about" class="hover:text-primary dark:hover:text-primary transition-colors">About</a>
+                    <a href="#experience"
+                        class="hover:text-primary dark:hover:text-primary transition-colors">Experience</a>
+                    <a href="#projects"
+                        class="hover:text-primary dark:hover:text-primary transition-colors">Projects</a>
+                    <a href="#freelancing"
+                        class="hover:text-primary dark:hover:text-primary transition-colors">Freelance</a>
+                    <a href="#honors" class="hover:text-primary dark:hover:text-primary transition-colors">Honors</a>
+                    <a href="#education"
+                        class="hover:text-primary dark:hover:text-primary transition-colors">Education</a>
+                </div>
+
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle"
+                    class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-300 focus:outline-none">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-slate-600 dark:text-slate-300"
+                    onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden lg:hidden bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+            <a href="#about" class="block py-3 px-6 hover:bg-slate-50 dark:hover:bg-slate-800">About</a>
+            <a href="#experience" class="block py-3 px-6 hover:bg-slate-50 dark:hover:bg-slate-800">Experience</a>
+            <a href="#projects" class="block py-3 px-6 hover:bg-slate-50 dark:hover:bg-slate-800">Projects</a>
+            <a href="#freelancing" class="block py-3 px-6 hover:bg-slate-50 dark:hover:bg-slate-800">Freelance</a>
+            <a href="#honors" class="block py-3 px-6 hover:bg-slate-50 dark:hover:bg-slate-800">Honors</a>
+            <a href="#education" class="block py-3 px-6 hover:bg-slate-50 dark:hover:bg-slate-800">Education</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden" id="about">
+        <!-- Background Blobs -->
+        <div
+            class="absolute top-0 left-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none mix-blend-multiply dark:mix-blend-screen opacity-50">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-96 h-96 bg-secondary/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 pointer-events-none mix-blend-multiply dark:mix-blend-screen opacity-50">
+        </div>
+
+        <div class="container mx-auto px-6 text-center z-10">
+            <div class="mb-8 relative inline-block group">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-40 group-hover:opacity-60 transition-opacity duration-500">
+                </div>
+                <img src="../assets/my_photo.jpg" alt="Md. Atik Shahriar"
+                    class="relative w-40 h-40 rounded-full border-4 border-white dark:border-slate-800 object-cover mx-auto shadow-xl">
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-tight text-slate-900 dark:text-white">
+                Md Atik <span
+                    class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">Shahriar</span>
+            </h1>
+
+            <p
+                class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed font-light">
+                Software Engineer | Full-Stack Developer | Security Researcher
+            </p>
+
+            <p class="text-slate-500 dark:text-slate-500 mb-10 max-w-3xl mx-auto">
+                Specializing in large-scale distributed systems, privacy-preserving AI, and security.
+                Currently building critical government infrastructure serving millions in Bangladesh.
+            </p>
+
+            <div class="flex justify-center gap-4 flex-wrap">
+                <a href="mailto:md.atikshahriar728@gmail.com"
+                    class="px-8 py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-primary dark:hover:bg-primary hover:text-white dark:hover:text-white rounded-full font-medium transition-all transform hover:scale-105 shadow-lg">
+                    Contact Me
+                </a>
+                <a href="https://github.com/mdatikshahriar" target="_blank"
+                    class="px-8 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-primary dark:hover:border-primary text-slate-700 dark:text-slate-300 rounded-full font-medium transition-all transform hover:scale-105 flex items-center gap-2 shadow-sm">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://linkedin.com/in/mdatikshahriar" target="_blank"
+                    class="px-8 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-primary dark:hover:border-primary text-slate-700 dark:text-slate-300 rounded-full font-medium transition-all transform hover:scale-105 flex items-center gap-2 shadow-sm">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills (Cards) -->
+    <section class="py-20 bg-white dark:bg-slate-900/50 transition-colors">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2
+                    class="text-3xl font-bold text-slate-900 dark:text-white inline-block relative after:content-[''] after:block after:w-12 after:h-1 after:bg-primary after:mt-2 after:mx-auto after:rounded-full">
+                    Technical Expertise
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Languages -->
+                <div class="glass-card p-8 rounded-2xl shadow-sm hover:shadow-md transition-all group">
+                    <div
+                        class="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform">
+                        <i class="fas fa-code text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-white">Languages</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Java</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">JavaScript</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Python</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">C/C++</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Go</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Bash</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">SQL</span>
+                    </div>
+                </div>
+
+                <!-- Frameworks -->
+                <div class="glass-card p-8 rounded-2xl shadow-sm hover:shadow-md transition-all group">
+                    <div
+                        class="w-12 h-12 bg-purple-50 dark:bg-purple-900/30 rounded-xl flex items-center justify-center mb-6 text-secondary group-hover:scale-110 transition-transform">
+                        <i class="fas fa-layer-group text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-white">Frameworks & Libraries</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">HTML
+                            & CSS</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Spring
+                            Boot</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Next.js</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Hyperledger
+                            Fabric</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">MCP</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">React
+                            & Redux</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Android
+                            SDK</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Node.js</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Express.js</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Thymeleaf</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Tailwind
+                            CSS</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Liquibase</span>
+                        <span
+                            class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Laravel</span>
+                    </div>
+                </div>
+
+                <!-- Combined Databases & Tools -->
+                <div
+                    class="glass-card p-8 rounded-2xl shadow-sm hover:shadow-md transition-all group flex flex-col justify-between">
+                    <!-- Databases Section -->
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div
+                                class="w-12 h-12 bg-teal-50 dark:bg-teal-900/30 rounded-xl flex items-center justify-center text-teal-500 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-database text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-white">Databases</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">MySQL</span>
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Microsoft
+                                SQL Server</span>
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Oracle</span>
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">MongoDB</span>
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Firebase</span>
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Redis</span>
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="border-t border-slate-200 dark:border-slate-700 mb-8"></div>
+
+                    <!-- Tools Section -->
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <div
+                                class="w-12 h-12 bg-indigo-50 dark:bg-indigo-900/30 rounded-xl flex items-center justify-center text-indigo-500 group-hover:scale-110 transition-transform">
+                                <i class="fas fa-toolbox text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-white">Major Tools</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Git</span>
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">LaTex</span>
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Docker</span>
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Kubernetes</span>
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-slate-800 rounded-full text-sm text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Azure</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Problem Solving (Bottom Full Width) -->
+            <div class="mt-12 bg-slate-900 text-white rounded-2xl p-8 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-8 opacity-10">
+                    <i class="fas fa-code text-9xl"></i>
+                </div>
+                <div class="relative z-10">
+                    <h3 class="text-2xl font-bold mb-2">Competitive Programming</h3>
+                    <p class="text-slate-300 mb-6 max-w-2xl">Solved <span class="text-white font-bold">500+</span>
+                        problems across Codeforces, LeetCode, HackerRank, LightOJ, and UVA.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://codeforces.com/profile/mdatikshahriar" target="_blank"
+                            class="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg backdrop-blur-sm transition-colors text-sm">Codeforces:
+                            mdatikshahriar</a>
+                        <a href="https://leetcode.com/u/mdatikshahriar/" target="_blank"
+                            class="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg backdrop-blur-sm transition-colors text-sm">LeetCode:
+                            mdatikshahriar</a>
+                        <a href="https://www.hackerrank.com/mdatikshahriar" target="_blank"
+                            class="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg backdrop-blur-sm transition-colors text-sm">HackerRank:
+                            mdatikshahriar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-16 text-center text-slate-900 dark:text-white">Professional Journey</h2>
+
+            <div class="relative border-l-2 border-slate-200 dark:border-slate-700 ml-4 md:ml-12 space-y-12">
+
+                <!-- Job 1 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div
+                        class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white dark:bg-slate-900 border-4 border-primary shadow-sm">
+                    </div>
+                    <div class="mb-2 text-sm text-primary font-bold uppercase tracking-wider">May 2021 - Present</div>
+                    <h3 class="text-2xl font-bold text-slate-800 dark:text-white">Software Engineer</h3>
+                    <h4 class="text-lg text-slate-500 dark:text-slate-400 mb-4"><a href="https://www.dsinnovators.com/"
+                            target="_blank" class="hover:underline">Dynamic Solution Innovators</a> | Dhaka, Bangladesh
+                    </h4>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm text-slate-600 dark:text-slate-300">
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>Full-stack development for <a href="https://ipemis.dpe.gov.bd/" target="_blank"
+                                    class="hover:underline"><strong>IPEMIS</strong></a> (Primary Education Management
+                                Information System).</li>
+                            <li>Engineered critical modules like Teacher Transfer using <strong>Spring Batch</strong>.
+                            </li>
+                            <li>Utilized Spring Boot, Next.js, Kubernetes, and Oracle/MSSQL to ensure system
+                                scalability.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Teaching -->
+                <div class="relative pl-8 md:pl-12">
+                    <div
+                        class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white dark:bg-slate-900 border-4 border-secondary shadow-sm">
+                    </div>
+                    <div class="mb-2 text-sm text-secondary font-bold uppercase tracking-wider">Mar 2022 - Jul 2022
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 dark:text-white">Blockchain Instructor</h3>
+                    <h4 class="text-lg text-slate-500 dark:text-slate-400 mb-4"><a
+                            href="https://amarischool.com/courses/Blockchain-Introduction-645a2f50e4b0e88d064b62ec"
+                            target="_blank" class="hover:underline">Amari School</a></h4>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm text-slate-600 dark:text-slate-300">
+                        <ul class="list-disc list-inside space-y-2">
+                            <li>Designed and taught curriculum on Cryptocurrencies, Web3.0, NFTs, and DApps.</li>
+                            <li>Guided students in building decentralized applications using <strong>Hyperledger
+                                    Fabric</strong>.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Research -->
+                <div class="relative pl-8 md:pl-12">
+                    <div
+                        class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white dark:bg-slate-900 border-4 border-teal-400 shadow-sm">
+                    </div>
+                    <div class="mb-2 text-sm text-teal-500 font-bold uppercase tracking-wider">Sep 2021 - Sep 2022</div>
+                    <h3 class="text-2xl font-bold text-slate-800 dark:text-white">Research Assistant</h3>
+                    <h4 class="text-lg text-slate-500 dark:text-slate-400 mb-4">Blockchain Empowered e-KYC System</h4>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm text-slate-600 dark:text-slate-300">
+                        <p>Conducted systematic literature reviews and published research on financial inclusion for
+                            marginalized populations via blockchain technology.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-slate-50 dark:bg-slate-900/50 transition-colors">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center text-slate-900 dark:text-white">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <!-- Project 1 -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 hover:shadow-lg transition-all group">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start">
+                            <h3
+                                class="text-2xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-800 dark:text-white">
+                                Instruction Poisoning in RAG</h3>
+                            <i class="fas fa-robot text-slate-300 dark:text-slate-600 text-2xl"></i>
+                        </div>
+                        <p class="text-slate-500 dark:text-slate-400 mb-4 text-sm font-mono">Java • Spring AI • Azure
+                            OpenAI</p>
+                        <p class="text-slate-600 dark:text-slate-300 mb-6">Full-stack MCP-based RAG chat application
+                            with vector database integration designed to evaluate and demonstrate vulnerabilities in LLM
+                            agents.</p>
+                        <a href="https://github.com/mdatikshahriar/mcp-rag-attack" target="_blank"
+                            class="inline-flex items-center text-sm font-bold text-primary hover:underline transition-colors">
+                            View Source <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 hover:shadow-lg transition-all group">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start">
+                            <h3
+                                class="text-2xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-800 dark:text-white">
+                                SpecSentinel</h3>
+                            <i class="fas fa-shield-alt text-slate-300 dark:text-slate-600 text-2xl"></i>
+                        </div>
+                        <p class="text-slate-500 dark:text-slate-400 mb-4 text-sm font-mono">Python • Jupyter • Azure
+                            OpenAI</p>
+                        <p class="text-slate-600 dark:text-slate-300 mb-6">AI-powered tool that analyzes Java Language
+                            Specifications to detect conflicts, contradictions, and semantic drift using Large Language
+                            Models.</p>
+                        <a href="https://github.com/mdatikshahriar/SpecSentinel" target="_blank"
+                            class="inline-flex items-center text-sm font-bold text-primary hover:underline transition-colors">
+                            View Source <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 hover:shadow-lg transition-all group">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start">
+                            <h3
+                                class="text-2xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-800 dark:text-white">
+                                GoodsLedger</h3>
+                            <i class="fas fa-cubes text-slate-300 dark:text-slate-600 text-2xl"></i>
+                        </div>
+                        <p class="text-slate-500 dark:text-slate-400 mb-4 text-sm font-mono">Android • Hyperledger
+                            Fabric</p>
+                        <p class="text-slate-600 dark:text-slate-300 mb-6">Android application integrated with a
+                            Hyperledger Fabric server to detect counterfeit products using permissioned blockchain
+                            technology.</p>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/mdatikshahriar/GoodsLedger-App"
+                                class="text-sm font-bold text-primary hover:underline transition-colors">App Code</a>
+                            <a href="https://github.com/mdatikshahriar/GoodsLedger-Server"
+                                class="text-sm font-bold text-primary hover:underline transition-colors">Server Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 hover:shadow-lg transition-all group">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start">
+                            <h3
+                                class="text-2xl font-bold mb-2 group-hover:text-primary transition-colors text-slate-800 dark:text-white">
+                                GetPureCure</h3>
+                            <i class="fas fa-heartbeat text-slate-300 dark:text-slate-600 text-2xl"></i>
+                        </div>
+                        <p class="text-slate-500 dark:text-slate-400 mb-4 text-sm font-mono">Android • React • Express •
+                            MongoDB</p>
+                        <p class="text-slate-600 dark:text-slate-300 mb-6">Comprehensive healthcare platform connecting
+                            patients, doctors, and students, featuring an e-commerce module for medical products.</p>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/mdatikshahriar/GetPureCure"
+                                class="text-sm font-bold text-primary hover:underline transition-colors">App Code</a>
+                            <a href="https://github.com/FHB369/getpurecure"
+                                class="text-sm font-bold text-primary hover:underline transition-colors">Web Code</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Freelancing Section -->
+    <section id="freelancing" class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-slate-50 dark:bg-slate-900/30 transform skew-y-3 origin-top-right -z-10"></div>
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center text-slate-900 dark:text-white">Freelance Work</h2>
+
+            <div
+                class="max-w-4xl mx-auto bg-white dark:bg-slate-800 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-xl overflow-hidden">
+                <div class="p-8 md:p-12">
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-16 h-16 rounded-full bg-upwork/10 flex items-center justify-center text-upwork text-3xl">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Software Engineer</h3>
+                                <p class="text-upwork font-bold flex items-center gap-2">
+                                    <i class="fas fa-check-circle"></i> Top Rated
+                                </p>
+                            </div>
+                        </div>
+                        <div class="text-center md:text-right">
+                            <div class="text-2xl font-bold text-slate-900 dark:text-white">100%</div>
+                            <div class="text-sm text-slate-500 dark:text-slate-400">Job Success</div>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-600 dark:text-slate-300 mb-8 text-lg">
+                        Experienced in delivering high-quality solutions for international clients. Specialized in
+                        blockchain development (Hyperledger Fabric), backend systems, and full-stack applications.
+                    </p>
+
+                    <div class="mb-8">
+                        <h4 class="text-sm font-bold uppercase text-slate-500 dark:text-slate-400 mb-4">Skills & Tools
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-slate-700 rounded text-sm text-slate-600 dark:text-slate-300">Hyperledger
+                                Fabric</span>
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-slate-700 rounded text-sm text-slate-600 dark:text-slate-300">Java</span>
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-slate-700 rounded text-sm text-slate-600 dark:text-slate-300">Spring
+                                Boot</span>
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-slate-700 rounded text-sm text-slate-600 dark:text-slate-300">Docker</span>
+                            <span
+                                class="px-3 py-1 bg-slate-100 dark:bg-slate-700 rounded text-sm text-slate-600 dark:text-slate-300">Blockchain</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <a href="https://www.upwork.com/freelancers/~018c7cf1401356dfd8?mp_source=share" target="_blank"
+                            class="inline-flex items-center gap-2 bg-upwork hover:bg-green-700 text-white px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg shadow-green-500/30">
+                            Hire Me on Upwork <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education, Certifications & Scores -->
+    <section id="education" class="py-20 bg-slate-50 dark:bg-slate-900/50 transition-colors">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center text-slate-900 dark:text-white">Education & Certifications
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Education Timeline -->
+                <div class="space-y-8">
+                    <h3
+                        class="text-xl font-bold mb-4 text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-slate-700 pb-2">
+                        Academic History</h3>
+
+                    <div class="relative pl-6 border-l border-slate-300 dark:border-slate-700">
+                        <div class="mb-6 relative">
+                            <span class="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-primary"></span>
+                            <h4 class="text-lg font-bold text-slate-900 dark:text-white"><a href="https://sust.edu/"
+                                    target="_blank" class="hover:underline">Shahjalal University of Science and
+                                    Technology</a></h4>
+                            <p class="text-primary text-sm">B.Sc in Computer Science and Engineering</p>
+                            <p class="text-slate-500 text-xs">2017 - 2022 | CGPA: 3.55</p>
+                        </div>
+                        <div class="mb-6 relative">
+                            <span class="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-slate-400"></span>
+                            <h4 class="text-lg font-bold text-slate-900 dark:text-white"><a href="https://ndc.edu.bd/"
+                                    target="_blank" class="hover:underline">Notre Dame College</a></h4>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm">Higher Secondary School Certificate
+                                (Science)</p>
+                            <p class="text-slate-500 text-xs">2014 - 2016</p>
+                        </div>
+                        <div class="mb-6 relative">
+                            <span class="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-slate-400"></span>
+                            <h4 class="text-lg font-bold text-slate-900 dark:text-white"><a href="https://tgbhs.edu.bd/"
+                                    target="_blank" class="hover:underline">Thakurgaon Govt. Boys' High School</a></h4>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm">Secondary School Certificate (Science)
+                            </p>
+                            <p class="text-slate-500 text-xs">2010 - 2014</p>
+                        </div>
+                        <div class="relative">
+                            <span class="absolute -left-[29px] top-1 w-3 h-3 rounded-full bg-slate-400"></span>
+                            <h4 class="text-lg font-bold text-slate-900 dark:text-white"><a
+                                    href="https://faridpurzillaschool.edu.bd/" target="_blank"
+                                    class="hover:underline">Faridpur Zilla School</a></h4>
+                            <p class="text-slate-500 text-xs">2007 - 2010</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Certifications & Scores -->
+                <div class="space-y-8">
+                    <!-- Certifications -->
+                    <div>
+                        <h3
+                            class="text-xl font-bold mb-4 text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-slate-700 pb-2">
+                            Certifications & Contributions</h3>
+                        <div class="space-y-4">
+                            <a href="https://www.coursera.org/account/accomplishments/verify/7YK8A8LQS2SF"
+                                target="_blank"
+                                class="block p-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg hover:border-primary transition-colors">
+                                <h4 class="font-bold text-slate-900 dark:text-white text-sm">Intro to TensorFlow for AI,
+                                    ML, and DL</h4>
+                                <p class="text-xs text-slate-500">Coursera (DeepLearning.AI)</p>
+                            </a>
+                            <a href="https://www.coursera.org/account/accomplishments/verify/3HTBP6SFL23L"
+                                target="_blank"
+                                class="block p-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg hover:border-primary transition-colors">
+                                <h4 class="font-bold text-slate-900 dark:text-white text-sm">Neural Networks and Deep
+                                    Learning</h4>
+                                <p class="text-xs text-slate-500">Coursera (DeepLearning.AI)</p>
+                            </a>
+                            <div
+                                class="p-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg">
+                                <h4 class="font-bold text-slate-900 dark:text-white text-sm">KIN Blood - App
+                                    Contribution</h4>
+                                <p class="text-xs text-slate-500">Google Play Store</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Scores -->
+                    <div>
+                        <h3
+                            class="text-xl font-bold mb-4 text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-slate-700 pb-2">
+                            Test Scores</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-4 bg-slate-100 dark:bg-slate-800 rounded-lg text-center">
+                                <p class="text-xs uppercase text-slate-500 font-bold">GRE (312)</p>
+                                <p class="text-sm font-mono mt-1 text-slate-700 dark:text-slate-300">Q:163 | V:149</p>
+                            </div>
+                            <div class="p-4 bg-slate-100 dark:bg-slate-800 rounded-lg text-center">
+                                <p class="text-xs uppercase text-slate-500 font-bold">IELTS (7.5)</p>
+                                <p class="text-sm font-mono mt-1 text-slate-700 dark:text-slate-300"> L:7.5 | R:9 |
+                                    W:6.5 | S:6 </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Honors, Awards & Volunteering (New Grid Section) -->
+    <section id="honors" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12">
+
+                <!-- Awards Column -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-8 flex items-center gap-3 text-slate-900 dark:text-white">
+                        <span
+                            class="p-2 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg text-yellow-600 dark:text-yellow-400"><i
+                                class="fas fa-trophy"></i></span>
+                        Honors & Awards
+                    </h2>
+                    <div class="space-y-6">
+                        <div
+                            class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm">
+                            <h3 class="font-bold text-slate-800 dark:text-white">9th Place - BAS Science Olympiad</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Dhaka Regional • Jan 2015</p>
+                            <p class="text-xs text-slate-400 mt-1">Bangladesh Academy of Sciences</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm">
+                            <h3 class="font-bold text-slate-800 dark:text-white">2nd Runners Up - BDMO (Secondary)</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Thakurgaon Regional • Jan 2013 & Jan
+                                2014</p>
+                            <p class="text-xs text-slate-400 mt-1">Bangladesh Mathematical Olympiad Committee</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm">
+                            <h3 class="font-bold text-slate-800 dark:text-white">Champion - BDMO (Primary)</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Faridpur Regional • Jan 2009</p>
+                            <p class="text-xs text-slate-400 mt-1">Bangladesh Mathematical Olympiad Committee</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leadership & Volunteering Column -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-8 flex items-center gap-3 text-slate-900 dark:text-white">
+                        <span
+                            class="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg text-green-600 dark:text-green-400"><i
+                                class="fas fa-users"></i></span>
+                        Leadership & Volunteering
+                    </h2>
+                    <div class="space-y-6">
+                        <div
+                            class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm flex justify-between items-start">
+                            <div>
+                                <h3 class="font-bold text-slate-800 dark:text-white">President</h3>
+                                <p class="text-slate-600 dark:text-slate-300">Kurigram Students' Welfare Association,
+                                    SUST</p>
+                            </div>
+                            <span
+                                class="text-xs font-mono bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded text-slate-500">2019
+                                - 2022</span>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm flex justify-between items-start">
+                            <div>
+                                <h3 class="font-bold text-slate-800 dark:text-white">Librarian</h3>
+                                <p class="text-slate-600 dark:text-slate-300">Anushandhitshu Chokro Science Organization
+                                </p>
+                            </div>
+                            <span
+                                class="text-xs font-mono bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded text-slate-500">2011
+                                - 2014</span>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm flex justify-between items-start">
+                            <div>
+                                <h3 class="font-bold text-slate-800 dark:text-white">General Member</h3>
+                                <p class="text-slate-600 dark:text-slate-300">Notre Dame Science Club</p>
+                            </div>
+                            <span
+                                class="text-xs font-mono bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded text-slate-500">2014
+                                - 2015</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-16 text-center text-slate-900 dark:text-white">Beyond the Code</h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- YouTube -->
+                <div
+                    class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 text-center hover:shadow-lg transition-all group">
+                    <div
+                        class="w-16 h-16 mx-auto bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center text-red-600 mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fab fa-youtube text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Mind Minute</h3>
+                    <p class="text-slate-500 dark:text-slate-400 mb-6">Creating engaging AI-driven history content.</p>
+                    <a href="https://www.youtube.com/@MindMinute-YT" target="_blank"
+                        class="text-red-600 hover:text-red-700 font-bold text-sm">Visit Channel <i
+                            class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+
+                <!-- Football -->
+                <div
+                    class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 text-center hover:shadow-lg transition-all group">
+                    <div
+                        class="w-16 h-16 mx-auto bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-futbol text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">Football Fanatic</h3>
+                    <p class="text-slate-500 dark:text-slate-400">Passionate supporter of Real Madrid.</p>
+                    <p class="text-xs text-slate-400 mt-2">#HalaMadrid</p>
+                </div>
+
+                <!-- Gaming -->
+                <div
+                    class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-100 dark:border-slate-700 text-center hover:shadow-lg transition-all group">
+                    <div
+                        class="w-16 h-16 mx-auto bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center text-purple-600 mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-gamepad text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-slate-900 dark:text-white">FIFA / EA FC Expert</h3>
+                    <p class="text-slate-500 dark:text-slate-400">Competitive gaming & strategy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+        class="py-8 bg-white dark:bg-dark border-t border-slate-200 dark:border-slate-800 text-center transition-colors">
+        <p class="text-slate-500 dark:text-slate-400">&copy; 2025 Md. Atik Shahriar. Built with AI. Last updated: 27
+            Novemver 2025</p>
+    </footer>
+
+    <!-- Dark Mode Script -->
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle');
+
+        // Check local storage or system preference
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', function () {
+            // Toggle icons inside
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        });
+    </script>
+</body>
+
+</html>
